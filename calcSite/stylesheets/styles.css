@@ -1,0 +1,253 @@
+
+/* Basic reset */
+* {
+
+  box-sizing: border-box;
+
+  /* Better text styling */
+  font: bold 14.5px Arial, sans-serif;
+}
+
+
+body {
+
+  font-family: "ProximaNovaSemibold","Helvetica Neue",Helvetica,Arial,sans-serif;
+  position: relative;
+  fill: #000;
+  margin: 10px;
+  max-width: 990px;
+  min-width:990px;
+  border: 1px;
+       height: 100%;
+     background: white;
+     background: radial-gradient(circle, #fff 20%, #ccc);
+     background-size: cover;
+}
+
+/* Finally adding some IE9 fallbacks for gradients to finish things up */
+
+
+h1{
+  text-align:center;
+  position:relative;
+  padding: 15px 0px 0px 0px;
+  font-size:30px;
+  color:#888;
+
+}
+
+h1 .span{
+  font-size:20px;
+  color: red;
+}
+
+h4{
+  text-align:center;
+  position:relative;
+  width:600px;
+  margin: 10px auto;
+  padding: 10px 0px 0px 0px;
+  font-size:16px;
+  color:#888;
+
+}
+
+
+/* Using box shadows to create 3D effects */
+#calculator {
+	    width: 595px;
+	    height: auto;
+
+	    margin:  25px auto;
+	    padding: 20px 20px 9px;
+
+	    background: #81A594;
+	    /*background: linear-gradient(#9dd2ea, #8bceec);*/
+	    border-radius: 3px;
+	    box-shadow: 0px 4px #5F8573, 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.darken{
+  background-color: white;
+    filter:alpha(opacity=50); /* IE */
+    opacity: 0.5; /* Safari, Opera */
+    -moz-opacity:0.50; /* FireFox */
+    z-index: 20;
+    height: auto;
+    width: 595px;
+    background-repeat:no-repeat;
+    background-position:center;
+
+    transition: all 0.2s ease;
+   /* position:absolute;
+    top: 0px;
+    left: 0px;*/
+}
+
+.undarken
+{
+   background-color: white;
+    filter:alpha(opacity=1); /* IE */
+    opacity: 1; /* Safari, Opera */
+    -moz-opacity:1; /* FireFox */
+    z-index: 0;
+    height: auto;
+    width: 595px;
+    background-repeat:no-repeat;
+    background-position:center;
+
+    transition: all .2s ease;
+
+}
+
+/* Top portion */
+.top span.clear {
+     float: left;
+}
+
+/* Inset shadow on the screen to create indent */
+.top .screen {
+     height: 75px;
+     width: 410px;
+
+     float: left;
+
+     padding: 10px 10px;
+
+     background: rgba(0, 0, 0, 0.2);
+     border-radius: 5px;
+     box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
+
+     /* Typography */
+     font-size: 15px;
+     color: white;
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+     text-align: right;
+     letter-spacing: 1px;
+}
+
+/* Clear floats */
+.keys, .top {overflow: hidden;}
+
+.keys span.cityspan{
+background: #E6E6DC;
+}
+/* Applying same to the keys */
+.keys span, .top span.clear {
+      float: left;
+      position: relative;
+      /*top: 0;*/
+
+      cursor: pointer;
+
+      width: 132px;
+      height: 72px;
+
+      background: #E6E6DC;
+      border-radius: 3px;
+      box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+
+      margin: 0 7px 11px 0;
+
+      color: #888;
+      line-height: 36px;
+      text-align: center;
+    
+      /* prevent selection of text inside keys */
+      user-select: none;
+
+      /* Smoothing out hover and active states using css3 transitions */
+      transition: all 0.2s ease;
+}
+
+.keys{
+    font-size:20px;
+}
+
+/* Remove right margins from operator keys */
+/* style different type of keys (operators/evaluate/clear) differently */
+/*.keys span.operator {
+      background: #FFF0F5;
+      margin-right: 0;
+}
+*/
+
+.keys span.eval {
+      background: #FFB140;
+      box-shadow: 0px 6px #FF9700;
+      color: #888e5f;
+}
+
+.keys span.eval.active{
+  box-shadow: 0px 0px #717a33;
+  top: 4px;
+}
+
+.top span.clear {
+     background: #f68991;
+     box-shadow: 0px 6px #d3545d;
+     color: white;
+}
+
+
+/* Some hover effects */
+.keys div.darken span:hover{
+  background: white;
+      border-radius: 3px;
+      box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+
+      pointer-events: none;
+
+      color: #888;
+
+}
+
+.keys div.undarken span:hover {
+      background: #007EB2;
+      box-shadow: 0px 6px #00628B;
+      color: white;
+}
+
+.keys span.eval:hover {
+      background: #abb850;
+      box-shadow: 0px 6px #717a33;
+      color: #ffffff;
+}
+
+.top span.clear:hover {
+     background: #f68991;
+     box-shadow: 0px 6px #d3545d;
+     color: white;
+}
+
+
+/* Simulating "pressed" effect on active state of the keys by removing the box-shadow and moving the keys down a bit */
+/* the keys that are blacked out don't do anything when pressed */
+
+.keys div.darken span.active{
+ background: white;
+      border-radius: 3px;
+      box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+
+      color: #888;
+      line-height: 36px;
+      text-align: center;
+}
+
+.keys div.undarken span.active{
+ background: #9c89f6;
+      box-shadow: 0px 4px #6b54d3;
+      top: 2px;
+      color: white;
+}
+
+.keys span.eval:active {
+      box-shadow: 0px 4px #717a33;
+      top: 4px;
+}
+
+.top span.clear:active {
+     top: 4px;
+     box-shadow: 0px 4px #d3545d;
+}
+
